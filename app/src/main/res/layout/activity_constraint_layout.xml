@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F7F8">
+
+    <!-- Back -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/cheveon_left"
+        android:contentDescription="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Edit -->
+    <ImageButton
+        android:id="@+id/btnEdit"
+        android:layout_width="30dp"
+        android:layout_height="44dp"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/editpr"
+        android:scaleType="centerInside"
+        android:contentDescription="Edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#3FA186" />
+
+    <!-- Bottom Nav -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/bnav_colors"
+        app:itemTextColor="@color/bnav_colors"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Scroll content -->
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnBack"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Avatar circle + border -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatar"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:src="@drawable/image1"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/CircleImage"
+                app:strokeColor="#D6D6D6"
+                app:strokeWidth="2dp" />
+
+            <!-- Stars -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="★★★★★"
+                android:textColor="#F4C542"
+                android:textSize="14sp"/>
+
+            <!-- Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Johan Smith"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#222"/>
+
+            <!-- Location -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="California, USA"
+                android:textSize="12sp"
+                android:textColor="#777"/>
+
+            <!-- Stats -->
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="76dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="12dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="#3FA186">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Balance"
+                            android:textColor="#E7FFF6"
+                            android:textSize="11sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:textColor="#E7FFF6"
+                            android:textSize="11sp"/>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="76dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="12dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="#3FA186">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Orders"
+                            android:textColor="#E7FFF6"
+                            android:textSize="11sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:textColor="#E7FFF6"
+                            android:textSize="11sp"/>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="76dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="#3FA186">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Spent"
+                            android:textColor="#E7FFF6"
+                            android:textSize="11sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="000.0"
+                            android:textColor="#E7FFF6"
+                            android:textSize="11sp"/>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Menu list in rounded card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout style="@style/ProfileRow">
+                        <ImageView style="@style/ProfileRowIcon" android:src="@drawable/person" />
+                        <TextView style="@style/ProfileRowText" android:text="Personal Information"/>
+                        <ImageView style="@style/ProfileRowArrow" android:src="@drawable/baseline_chevron_right_24"/>
+                    </LinearLayout>
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout style="@style/ProfileRow">
+                        <ImageView style="@style/ProfileRowIcon" android:src="@drawable/cart" />
+                        <TextView style="@style/ProfileRowText" android:text="Your Order"/>
+                        <ImageView style="@style/ProfileRowArrow" android:src="@drawable/baseline_chevron_right_24"/>
+                    </LinearLayout>
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout style="@style/ProfileRow">
+                        <ImageView style="@style/ProfileRowIcon" android:src="@drawable/heart" />
+                        <TextView style="@style/ProfileRowText" android:text="Your Favourites"/>
+                        <ImageView style="@style/ProfileRowArrow" android:src="@drawable/baseline_chevron_right_24"/>
+                    </LinearLayout>
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout style="@style/ProfileRow">
+                        <ImageView style="@style/ProfileRowIcon" android:src="@drawable/payment" />
+                        <TextView style="@style/ProfileRowText" android:text="Payment"/>
+                        <ImageView style="@style/ProfileRowArrow" android:src="@drawable/baseline_chevron_right_24"/>
+                    </LinearLayout>
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout style="@style/ProfileRow">
+                        <ImageView style="@style/ProfileRowIcon" android:src="@drawable/trusted" />
+                        <TextView style="@style/ProfileRowText" android:text="Recommended Shops"/>
+                        <ImageView style="@style/ProfileRowArrow" android:src="@drawable/baseline_chevron_right_24"/>
+                    </LinearLayout>
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout style="@style/ProfileRow">
+                        <ImageView style="@style/ProfileRowIcon" android:src="@drawable/location" />
+                        <TextView style="@style/ProfileRowText" android:text="Nearest Shop"/>
+                        <ImageView style="@style/ProfileRowArrow" android:src="@drawable/baseline_chevron_right_24"/>
+                    </LinearLayout>
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout style="@style/ProfileRow">
+                        <ImageView style="@style/ProfileRowIcon" android:src="@drawable/logout" />
+                        <TextView style="@style/ProfileRowText" android:text="Logout"/>
+                        <ImageView style="@style/ProfileRowArrow" android:src="@drawable/baseline_chevron_right_24"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
